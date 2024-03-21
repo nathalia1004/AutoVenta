@@ -66,6 +66,17 @@ private listaAutos: Array<any>=[
       precio:'160000',
       calificacion: '3',
       },
+      {
+        id:6,
+        imagenUrl: "assets/imagenAutos/Land Rover.jpg",
+        marca: 'Land Rover',
+        modelo: 'Defender143',
+        anio: 2023,
+        color: 'Verde',
+        kilometros:'800',
+        precio:'10000',
+        calificacion: '2',
+        },
 ];
 
 }

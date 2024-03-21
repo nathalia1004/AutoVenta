@@ -17,7 +17,8 @@ export class PagListaVehiculosComponent implements OnInit {
 
   @Input() valor: string = '';
   listaAutos:Array<any> = [];
-  constructor(private vehiculoService: VehiculoService) { 
+  constructor(
+    private vehiculoService: VehiculoService) { 
     
   }
 
