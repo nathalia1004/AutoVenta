@@ -24,6 +24,7 @@ export class PagListaVehiculosComponent implements OnInit {
 
   ngOnInit() {
     this.listaAutos= this.vehiculoService.getVehiculos();
+    
   }
   
   recepcion(dato:number){

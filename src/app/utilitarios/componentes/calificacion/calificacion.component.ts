@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CalificacionComponent implements OnInit {
 
 
-  @Input() calificacion:number = 0; 
+  @Input() calificacion:any = 0; 
   @Output() accionClick = new EventEmitter<any>();
   lista: Array<any> = [];
   constructor() { }

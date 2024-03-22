@@ -28,6 +28,7 @@
                 <th>
                     <button class="btn btn-outline-light" (click)="toogleImage()">{{muestraImagen ? "Oculta " : "Muestra " }} imagen </button>
                 </th>
+                <th>ID</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Año</th>
@@ -40,8 +41,9 @@
         <tbody>
           <tr *ngFor="let item of listaAutos">
                 <td>
-                  <p><img [src]="item.imagenUrl" [style.width.px]="anchoImagen" [style.margin.px]="margenImagen" *ngIf="muestraImagen"></p>
+                  <img [src]="item.imagenUrl" [style.width.px]="anchoImagen" [style.margin.px]="margenImagen" *ngIf="muestraImagen">
                 </td>
+                <td><a [routerLink]="['/vehiculo/'+item.id]">{{item.id}}</a></td>
                 <td>{{item.marca}}</td>
                 <td>{{item.modelo| lowercase | AEspacio: '-'}}</td>
                 <td [innerHTML]="item.anio"></td>

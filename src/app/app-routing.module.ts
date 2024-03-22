@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './paginas/Home/Home.component';
 import { PagListaVehiculosComponent } from './paginas/PagListaVehiculos/PagListaVehiculos.component';
 import { PagNotFoundComponent } from './paginas/PagNotFound/PagNotFound.component';
+import { PagVehiculoComponent } from './paginas/PagVehiculo/PagVehiculo.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: "vehiculos",
     component: PagListaVehiculosComponent
+  },
+  {
+    path: "vehiculo/:id",
+    component: PagVehiculoComponent
   },
   {
     path: "",
