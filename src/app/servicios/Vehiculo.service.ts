@@ -11,8 +11,8 @@ constructor() { }
 getVehiculos(){
   return this.listaAutos;
 }
-getVehiculo(id:string):Vehiculo|undefined{
-  let vehiculo= this.listaAutos.find(ele => ele.id === id );
+getVehiculo(codigo:string):Vehiculo|undefined{
+  let vehiculo= this.listaAutos.find(ele => ele.codigo === codigo);
   return vehiculo;
 }
 addVehiculo(vehiculo:Vehiculo){
@@ -20,68 +20,68 @@ addVehiculo(vehiculo:Vehiculo){
 }
 private listaAutos: Array<Vehiculo>=[
   {
-      id:"1",
-      imagenUrl: 'assets/imagenAutos/Aston.jpg',
+      codigo:"1",
+      foto: 'assets/imagenAutos/Aston.jpg',
       marca: 'Aston Martin',
       modelo: 'Vulcan2-6',
       anio: 2020,
       color: 'Celeste',
-      kilometros:'2000',
+      kilometraje:'2000',
       precio:200000,
       calificacion: 1,
       },
       {
-      id:"2",
-      imagenUrl: "assets/imagenAutos/Audi.jpg",
+      codigo:"2",
+      foto: "assets/imagenAutos/Audi.jpg",
       marca: 'Audi',
       modelo: 'Spyder-2',
       anio: 2023,
       color: 'Rosa',
-      kilometros:'1000',
+      kilometraje:'1000',
       precio:150000,
       calificacion: 5,
       },
       {
-      id:"3",
-      imagenUrl: "assets/imagenAutos/Bentley.jpg",
+      codigo:"3",
+      foto: "assets/imagenAutos/Bentley.jpg",
       marca: 'Bentley',
       modelo: 'Continental',
       anio: 2021,
       color: 'Lila',
-      kilometros:'5000',
+      kilometraje:'5000',
       precio:350000,
       calificacion: 2,
       },
       {
-      id:"4",
-      imagenUrl: "assets/imagenAutos/Ferrari.jpg",
+      codigo:"4",
+      foto: "assets/imagenAutos/Ferrari.jpg",
       marca: 'Ferrari',
       modelo: 'Portofino',
       anio: 2022,
       color: 'Amarillo',
-      kilometros:'1000',
+      kilometraje:'1000',
       precio:250000,
       calificacion: 4,
       },
       {
-      id:"5",
-      imagenUrl: "assets/imagenAutos/Land Rover.jpg",
+      codigo:"5",
+      foto: "assets/imagenAutos/Land Rover.jpg",
       marca: 'Land Rover',
       modelo: 'Defender143',
       anio: 2023,
       color: 'Verde',
-      kilometros:'5000',
+      kilometraje:'5000',
       precio:160000,
       calificacion: 3,
       },
       {
-        id:"6",
-        imagenUrl: "assets/imagenAutos/Land Rover.jpg",
+        codigo:"6",
+        foto: "assets/imagenAutos/Land Rover.jpg",
         marca: 'Land Rover',
         modelo: 'Defender143',
         anio: 2023,
         color: 'Verde',
-        kilometros:'800',
+        kilometraje:'800',
         precio:10000,
         calificacion: 2,
         },

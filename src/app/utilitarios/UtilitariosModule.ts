@@ -4,6 +4,7 @@ import { CalificacionComponent } from "./componentes/calificacion/calificacion.c
 import { CommonModule } from "@angular/common";
 
 
+
 @NgModule({
     declarations:[
         AEspacioPipe,
