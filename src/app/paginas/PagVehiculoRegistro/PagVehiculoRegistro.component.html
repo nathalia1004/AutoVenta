@@ -12,56 +12,56 @@
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Código: </h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="codigo">
+            <input type="text" class="form-control" id="staticCodigo" name="codigo" [(ngModel)]="vehiculo.codigo">
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Marca:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="marca">
+            <input type="text" class="form-control" id="staticCodigo" name="marca" [(ngModel)]="vehiculo.marca">
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Modelo:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="modelo">
+            <input type="text" class="form-control" id="staticCodigo" name="modelo" [(ngModel)]="vehiculo.modelo">
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"> <h4>Color:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="color">
+            <input type="text" class="form-control" id="staticCodigo" name="color" [(ngModel)]="vehiculo.color">
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Año:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="anio">
+            <input type="text" class="form-control" id="staticCodigo" name="anio" [(ngModel)]="vehiculo.anio">
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Kilometraje:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="kilometraje">
+            <input type="text" class="form-control" id="staticCodigo" name="kilometraje"  [(ngModel)]="vehiculo.kilometraje">
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Precio:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="precio">
+            <input type="text" class="form-control" id="staticCodigo" name="precio" [(ngModel)]="vehiculo.precio">
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Calificación:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="number" class="form-control" id="staticCodigo" name="calificacion">
+            <input type="number" class="form-control" id="staticCodigo" name="calificacion" [(ngModel)]="vehiculo.calificacion">
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3 text-center">
-        <button class="btn btn-custom"> Guardar 💾</button>
+        <button class="btn btn-custom" (click)="guardar()"> Guardar 💾</button>
       </div>
       
 

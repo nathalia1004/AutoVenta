@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Vehiculo } from '../../utilitarios/modelos/Vehiculo';
+import { VehiculoService } from '../../servicios/Vehiculo.service';
+
 
 @Component({
   selector: 'app-PagVehiculoRegistro',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagVehiculoRegistroComponent implements OnInit {
 
-  constructor() { }
+  vehiculo:Vehiculo
+
+  constructor(
+    private vehiculoServicio: VehiculoService
+  ) { 
+    
+    this.vehiculo={
+    codigo: '',
+    foto:null,
+    marca: '',
+    modelo: '',
+    anio: 0,
+    color: '',
+    kilometraje:'',
+    precio:0,
+    calificacion: 0
+    };
+  }
 
   ngOnInit() {
+  }
+  
+  guardar(){
+    this.vehiculoServicio.addVehiculo(this.vehiculo);
+    console.log('grabado con exito');
   }
 
 }
