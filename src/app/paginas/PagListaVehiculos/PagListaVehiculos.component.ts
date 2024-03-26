@@ -11,7 +11,15 @@ export class PagListaVehiculosComponent implements OnInit {
 
    //listaAutos: Auto[] =[];
     muestraImagen: boolean = false;
-    filtro: string ="";
+    //filtro: string ="";
+    private _filtro:string="";
+    get filtro(){
+      return this._filtro
+    }
+    set filtro(data:string){
+      this._filtro=data;
+      this.consultaVehiculos();
+    }
     anchoImagen=120;
     margenImagen=10;
 
@@ -23,7 +31,13 @@ export class PagListaVehiculosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listaAutos= this.vehiculoService.getVehiculos();
+    this.consultaVehiculos();
+  }
+
+  consultaVehiculos(){
+    this.vehiculoService.getVehiculos(this.filtro).subscribe(data=>{
+      this.listaAutos= data;
+    });
     
   }
   

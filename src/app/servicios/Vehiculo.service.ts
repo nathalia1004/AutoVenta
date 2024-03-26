@@ -9,8 +9,14 @@ export class VehiculoService {
 
 constructor() { }
 
-getVehiculos(){
-  return this.listaAutos;
+getVehiculos(filtro:any):Observable<Array<Vehiculo>>{
+  const escucha: Observable<Array<Vehiculo>>= new Observable(
+    escuchando=>{
+      let lista= this.listaAutos.filter(elem => elem.marca.toLowerCase().includes(filtro.toLowerCase()));
+      escuchando.next(lista);
+    }
+  );
+  return escucha;
 }
 getVehiculo(codigo:string):Observable<Vehiculo|undefined>{
   const escucha: Observable<Vehiculo|undefined>= new Observable(

@@ -8,7 +8,7 @@
         <div class="col-md-12 text-center">
             <label for="filtro" class="form-label">Filtrar:</label>
             <div class="col-md-4 mx-auto">
-                <input type="text" class="form-control" id="filtro" [(ngModel)]="filtro">
+                <input type="text" class="form-control" id="filtro" [(ngModel)]="filtro" placeholder="Ingrese la marca del vehículo">
             </div>
         </div>
         
@@ -23,6 +23,7 @@
             <a [routerLink]="['/vehiculo/']"class="btn btn-custom"> Nuevo</a>
         </div>
     </div>
+    <br>
 </div>
 <div class="table-responsive">
     <table class="table table-hover table-dark" style="background-color: #926598;" *ngIf="listaAutos.length>0" >
