@@ -11,7 +11,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class PagVehiculoRegistroComponent implements OnInit {
 
- 
   formulario: FormGroup;
 
   constructor(
