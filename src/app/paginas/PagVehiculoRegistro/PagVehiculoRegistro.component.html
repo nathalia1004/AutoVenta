@@ -8,56 +8,58 @@
         
       </div>
       <div class="col-1"></div>
+      <form [formGroup]="formulario">
       <div class="col-6">
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Código: </h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="codigo" [(ngModel)]="vehiculo.codigo">
+            <input type="text" class="form-control" id="staticCodigo" name="codigo" formControlName="codigo" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Marca:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="marca" [(ngModel)]="vehiculo.marca">
+            <input type="text" class="form-control" id="staticCodigo" name="marca" formControlName="marca" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Modelo:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="modelo" [(ngModel)]="vehiculo.modelo">
+            <input type="text" class="form-control" id="staticCodigo" name="modelo" formControlName="modelo" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"> <h4>Color:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="color" [(ngModel)]="vehiculo.color">
+            <input type="text" class="form-control" id="staticCodigo" name="color" formControlName="color" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Año:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="anio" [(ngModel)]="vehiculo.anio">
+            <input type="text" class="form-control" id="staticCodigo" name="anio" formControlName="anio"  >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Kilometraje:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="kilometraje"  [(ngModel)]="vehiculo.kilometraje">
+            <input type="text" class="form-control" id="staticCodigo" name="kilometraje"  formControlName="kilometraje" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Precio:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="precio" [(ngModel)]="vehiculo.precio">
+            <input type="text" class="form-control" id="staticCodigo" name="precio" formControlName="precio" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Calificación:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="number" class="form-control" id="staticCodigo" name="calificacion" [(ngModel)]="vehiculo.calificacion">
+            <input type="number" class="form-control" id="staticCodigo" name="calificacion" formControlName="calificacion" >
           </div>
         </div>
       </div>
+    </form>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3 text-center">

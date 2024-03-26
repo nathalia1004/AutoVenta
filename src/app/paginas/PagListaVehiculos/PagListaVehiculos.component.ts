@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { VehiculoService } from '../../servicios/Vehiculo.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-PagListaVehiculos',
@@ -25,8 +26,11 @@ export class PagListaVehiculosComponent implements OnInit {
 
   @Input() valor: string = '';
   listaAutos:Array<any> = [];
+
+
   constructor(
-    private vehiculoService: VehiculoService) { 
+    private vehiculoService: VehiculoService
+    ) { 
     
   }
 
