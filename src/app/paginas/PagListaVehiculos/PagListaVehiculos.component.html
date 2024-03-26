@@ -1,4 +1,4 @@
-<div class="card border-light mb-3 " style="width:100% ;">
+<div class="card border-light mb-3 " >
     <div class="card-header " style="background-color: #926598;">
     <h1>{{tituloListaAutos}}</h1>
 </div>
@@ -17,7 +17,11 @@
         <div class="col-md-12">
             <h3>Filtrar por: {{filtro}}</h3>
         </div>
-        
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <a [routerLink]="['/vehiculo/']"class="btn btn-custom"> Nuevo</a>
+        </div>
     </div>
 </div>
 <div class="table-responsive">

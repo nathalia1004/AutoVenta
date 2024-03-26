@@ -5,6 +5,8 @@ import { FormsModule } from "@angular/forms";
 import { UtilitariosModule } from "../utilitarios/UtilitariosModule";
 import { PagVehiculoComponent } from "./PagVehiculo/PagVehiculo.component";
 import { RouterModule } from "@angular/router";
+import { PagVehiculoRegistroComponent } from "./PagVehiculoRegistro/PagVehiculoRegistro.component";
+import { PagNotFoundComponent } from "./PagNotFound/PagNotFound.component";
 
 @NgModule({
     imports:[
@@ -15,11 +17,15 @@ import { RouterModule } from "@angular/router";
     ],
     declarations:[
         PagListaVehiculosComponent,
-        PagVehiculoComponent
+        PagVehiculoComponent,
+        PagVehiculoRegistroComponent,
+        PagNotFoundComponent
     ],
     exports:[
         PagListaVehiculosComponent,
-        PagVehiculoComponent
+        PagVehiculoComponent,
+        PagVehiculoRegistroComponent,
+        PagNotFoundComponent
     ]
 })
 export class PaginaModule{
