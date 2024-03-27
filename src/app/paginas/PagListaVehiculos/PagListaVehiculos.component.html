@@ -41,6 +41,7 @@
                 <th>Kilometraje</th>
                 <th>Precio</th>
                 <th>Calificación</th>
+                <th>Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +57,12 @@
                 <td>{{item.kilometraje|number}}</td>
                 <td>{{item.precio|currency}}</td>
                 <td><app-calificacion [calificacion]="item.calificacion" (accionClick)="recepcion($event)"></app-calificacion></td>
+                <td>
+                    <div class="btn-grup" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary">Editar </button>
+                        <button type="button" class="btn btn-primary" (click)="eliminar(item.codigo)">Eliminar</button>
+                    </div>
+                </td>
             </tr>
 
         </tbody>

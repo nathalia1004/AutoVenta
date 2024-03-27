@@ -25,7 +25,7 @@ export class PagVehiculoComponent implements OnInit {
     this.route.params.subscribe(params =>{
       
       this.vehiculoService.getVehiculo(params['codigo']).subscribe(data=>{
-        this.vehiculo =data;
+        //this.vehiculo =data;
       });
       //this.vehiculo = this.vehiculoService.getVehiculo(params['codigo']);
     })
