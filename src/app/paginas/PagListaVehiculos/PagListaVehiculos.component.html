@@ -19,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col-3">
-                <a [routerLink]="['/vehiculo/']" class="btn btn-custom"> Nuevo Vehículo 🔧</a>
+                <a [routerLink]="['/vehiculos/registro']" class="btn btn-custom"> Nuevo Vehículo 🔧</a>
             </div>
         </div>
         <br>
@@ -77,7 +77,7 @@
                     <td class="text-center small"><app-calificacion [calificacion]="item.calificacion" (accionClick)="recepcion($event)"></app-calificacion></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-edit custom-margin" [routerLink]="['/vehiculo/'+item.codigo]">Editar📝 </button>
+                            <button type="button" class="btn btn-edit custom-margin" [routerLink]="['/vehiculos/'+item.codigo]">Editar📝 </button>
                             <button type="button" class="btn btn-delete" (click)="eliminar(item.codigo)">Eliminar❌</button>
                         </div>
                     </td>
