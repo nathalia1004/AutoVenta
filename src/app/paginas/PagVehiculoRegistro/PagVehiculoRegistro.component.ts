@@ -5,6 +5,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn,
 import { validadorCodigo } from '../../validaciones/VehiculoValidaciones';
 import Swal from 'sweetalert2';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class PagVehiculoRegistroComponent implements OnInit {
 
   constructor(
     private vehiculoServicie: VehiculoService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private location: Location
   ) { 
     this.formulario= this.formBuilder.group({
       "codigo":['',[Validators.required, validadorCodigo()]],
@@ -69,6 +71,9 @@ export class PagVehiculoRegistroComponent implements OnInit {
         icon: "error"
       });
     }
+  }
+  goBack(): void {
+    this.location.back();
   }
 
 }

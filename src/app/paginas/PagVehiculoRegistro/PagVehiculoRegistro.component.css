@@ -3,3 +3,15 @@
     color: #060606; 
     width: fit-content; 
 }
+.btn-volver{
+    background-color: #e84c9d;
+    color: #060606;
+}
+input{
+    background-color: #c9e6f4;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

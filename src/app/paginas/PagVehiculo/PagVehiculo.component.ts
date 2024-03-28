@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VehiculoService } from '../../servicios/Vehiculo.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validadorCodigo } from '../../validaciones/VehiculoValidaciones';
+import { Location } from '@angular/common';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,7 +20,8 @@ export class PagVehiculoComponent implements OnInit {
   constructor( 
     private activatedRoute: ActivatedRoute,
     private vehiculoService:VehiculoService,
-    private formBuilder:FormBuilder) {
+    private formBuilder:FormBuilder,
+    private location: Location) {
   
       this.formulario= this.formBuilder.group({
         "codigo":['',[Validators.required, validadorCodigo()]],
@@ -54,6 +56,9 @@ export class PagVehiculoComponent implements OnInit {
         }
       });
     });
+  }
+  goBack(): void {
+    this.location.back();
   }
 
   guardar(){

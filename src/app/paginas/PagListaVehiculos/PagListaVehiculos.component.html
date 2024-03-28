@@ -51,15 +51,15 @@
                     <th>
                         <button class="btn btn-outline-light" (click)="toogleImage()">{{ muestraImagen ? "Oculta " : "Muestra " }} imagen </button>
                     </th>
-                    <th><h6>Código</h6></th>
-                    <th><h6>Marca</h6></th>
-                    <th><h6>Modelo</h6></th>
-                    <th><h6>Año</h6></th>
+                    <th class="text-center"><h6>Código</h6></th>
+                    <th class="text-center"><h6>Marca</h6></th>
+                    <th class="text-center"><h6>Modelo</h6></th>
+                    <th class="text-center"><h6>Año</h6></th>
                     <!--<th>Color</th>-->
-                    <th><h6>Kilometraje</h6></th>
-                    <th><h6>Precio</h6></th>
-                    <th><h6>Calificación</h6></th>
-                    <th><h6>Opciones</h6></th>
+                    <th class="text-center"><h6>Kilometraje</h6></th>
+                    <th class="text-center"><h6>Precio</h6></th>
+                    <th class="text-center"><h6>Calificación</h6></th>
+                    <th class="text-center"><h6>Opciones</h6></th>
                 </tr>
             </thead>
             <tbody>
@@ -74,7 +74,7 @@
                     <!--<td>{{ item.color }}</td>-->
                     <td>{{ item.kilometraje | number }}</td>
                     <td>{{ item.precio | currency }}</td>
-                    <td><app-calificacion [calificacion]="item.calificacion" (accionClick)="recepcion($event)"></app-calificacion></td>
+                    <td class="text-center small"><app-calificacion [calificacion]="item.calificacion" (accionClick)="recepcion($event)"></app-calificacion></td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-edit custom-margin" [routerLink]="['/vehiculo/'+item.codigo]">Editar📝 </button>
