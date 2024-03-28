@@ -38,22 +38,30 @@ export class PagListaVehiculosComponent implements OnInit {
   ngOnInit() {
     //this.consultaVehiculos();
     console.log('ingreso a ejecutarse');
+    this.consultarVehiculos();
+    
+  }
+
+  consultarVehiculos(){
     this.vehiculoService.getVehiculos().subscribe( respuesta =>{
       console.log(respuesta);
       this.listaAutos=respuesta;
     });
   }
+
   eliminar(codigo:string){
     Swal.fire({
       title:"Estas seguro que quieres eliminar este registro?",
-      showDenyButton: true,
+      
       showCancelButton: true,
       confirmButtonText:"Sí",
-      cancelButtonText: "Cancelar"
+      cancelButtonText: "No",
+      icon:"question"
     }).then((res)=>{
       if(res.isConfirmed){
         this.vehiculoService.eliminarVehiculo(codigo).subscribe(data=>{
           if(data.codigo=='1'){
+            this.consultarVehiculos();
             Swal.fire({
               title:"Mensaje",
               text: "Vehículo eliminado con éxito",
@@ -65,12 +73,12 @@ export class PagListaVehiculosComponent implements OnInit {
     });
   }
 
-  consultaVehiculos(){
+  //consultaVehiculos(){
     //this.vehiculoService.getVehiculos(this.filtro).subscribe(data=>{
       //this.listaAutos= data;
     //});
     
-  }
+  //}
   
   recepcion(dato:number){
     console.log('Dato: ',dato);

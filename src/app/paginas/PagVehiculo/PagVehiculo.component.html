@@ -1,49 +1,73 @@
+<form [formGroup]="formulario">
 <div class="card">
   <div class="card-header" style="background-color: #926598;">
-      <h3>✨ {{vehiculo?.marca}} - {{vehiculo?.modelo}} </h3> 
+      <h3 *ngIf="vehiculo">✨ {{vehiculo.marca}} - {{vehiculo.modelo}} </h3> 
   </div>
   <div class="card-body" style="background-color: #ba9dbe;">
     <div class="row">
-      <div class="col-5">
-        <img src="{{vehiculo?.foto}}"  class="img-thumbnail">
+      <div class="col-2">
+        
       </div>
       <div class="col-1"></div>
+      
       <div class="col-6">
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Código: </h4></label>
-          <div class="col-sm-8 text-start"> <h6>{{vehiculo?.codigo}}</h6></div>
+          <div class="col-sm-8 text-start">
+            <input type="text" class="form-control" id="staticCodigo" name="codigo" formControlName="codigo">
+            <span class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['required']">Valor Requerido</span><br>
+            
+          </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Marca:</h4></label>
-          <div class="col-sm-8 text-start"><h6>{{vehiculo?.marca}}</h6></div>
+          <div class="col-sm-8 text-start">
+            <input type="text" class="form-control" id="staticCodigo" name="marca" formControlName="marca" >
+            <span class="text-danger" *ngIf="formulario.controls['marca'].errors?.['required']">Valor Requerido</span><br>
+          </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Modelo:</h4></label>
-          <div class="col-sm-8 text-start"><h6>{{vehiculo?.modelo}}</h6></div>
+          <div class="col-sm-8 text-start">
+            <input type="text" class="form-control" id="staticCodigo" name="modelo" formControlName="modelo" >
+            <span class="text-danger" *ngIf="formulario.controls['modelo'].errors?.['required']">Valor Requerido</span><br>
+          </div>
         </div>
-        <div class="d-flex justify-content-between align-items-center" >
-          <label for="staticCodigo" class="col-sm-3 col-form-label text-start"> <h4>Color:</h4></label>
-          <div class="col-sm-8 text-start"><h6>{{vehiculo?.color}}</h6></div>
-        </div>
+      
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Año:</h4> </label>
-          <div class="col-sm-8 text-start"><h6>{{vehiculo?.anio}}</h6></div>
+          <div class="col-sm-8 text-start">
+            <input type="text" class="form-control" id="staticCodigo" name="anio" formControlName="anio"  >
+          </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Kilometraje:</h4> </label>
-          <div class="col-sm-8 text-start"><h6>{{vehiculo?.kilometraje|number}}</h6></div>
+          <div class="col-sm-8 text-start">
+            <input type="text" class="form-control" id="staticCodigo" name="kilometraje"  formControlName="kilometraje" >
+          </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Precio:</h4> </label>
-          <div class="col-sm-8 text-start"><h6>{{vehiculo?.precio|currency}}</h6></div>
+          <div class="col-sm-8 text-start">
+            <input type="text" class="form-control" id="staticCodigo" name="precio" formControlName="precio" >
+          </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Calificación:</h4> </label>
           <div class="col-sm-8 text-start">
-            <h5><app-calificacion [calificacion]="vehiculo?.calificacion"></app-calificacion></h5>
+            <input type="number" class="form-control" id="staticCodigo" name="calificacion" formControlName="calificacion" >
           </div>
         </div>
       </div>
+   
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center">
+        <button class="btn btn-custom" (click)="guardar()"> Guardar 💾</button>
+      </div>
+      
+
     </div>
   </div>
 </div>
+</form>

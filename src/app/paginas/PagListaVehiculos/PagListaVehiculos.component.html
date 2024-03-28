@@ -20,7 +20,7 @@
     </div>
     <div class="row">
         <div class="col-3">
-            <a [routerLink]="['/vehiculo/']"class="btn btn-custom"> Nuevo</a>
+            <a [routerLink]="['/vehiculo/']"class="btn btn-custom"> Nuevo Vehículo 🔧</a>
         </div>
     </div>
     <br>
@@ -33,15 +33,15 @@
                 <th>
                     <button class="btn btn-outline-light" (click)="toogleImage()">{{muestraImagen ? "Oculta " : "Muestra " }} imagen </button>
                 </th>
-                <th>Código</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Año</th>
-                <th>Color</th>
-                <th>Kilometraje</th>
-                <th>Precio</th>
-                <th>Calificación</th>
-                <th>Opciones</th>
+                <th><h6>Código</h6></th>
+                <th><h6>Marca</h6></th>
+                <th><h6>Modelo</h6></th>
+                <th><h6>Año</h6></th>
+                <!--<th>Color</th>-->
+                <th><h6>Kilometraje</h6></th>
+                <th><h6>Precio</h6></th>
+                <th><h6>Calificación</h6></th>
+                <th><h6>Opciones</h6></th>
             </tr>
         </thead>
         <tbody>
@@ -49,18 +49,18 @@
                 <td>
                   <img [src]="item.foto" [style.width.px]="anchoImagen" [style.margin.px]="margenImagen" *ngIf="muestraImagen">
                 </td>
-                <td><a [routerLink]="['/vehiculo/'+item.codigo]">{{item.codigo}}</a></td>
+                <td>{{item.codigo}}</td>
                 <td>{{item.marca}}</td>
                 <td>{{item.modelo| lowercase | AEspacio: '-'}}</td>
                 <td [innerHTML]="item.anio"></td>
-                <td>{{item.color}}</td>
+                <!--<td>{{item.color}}</td>-->
                 <td>{{item.kilometraje|number}}</td>
                 <td>{{item.precio|currency}}</td>
                 <td><app-calificacion [calificacion]="item.calificacion" (accionClick)="recepcion($event)"></app-calificacion></td>
                 <td>
                     <div class="btn-grup" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary">Editar </button>
-                        <button type="button" class="btn btn-primary" (click)="eliminar(item.codigo)">Eliminar</button>
+                        <button type="button" class="btn btn-edit custom-margin" [routerLink]="['/vehiculo/'+item.codigo]">Editar 📝 </button>
+                        <button type="button" class="btn btn-delete" (click)="eliminar(item.codigo)">Eliminar ❌</button>
                     </div>
                 </td>
             </tr>

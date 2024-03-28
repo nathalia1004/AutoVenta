@@ -31,7 +31,6 @@ getVehiculos():Observable<Vehiculo[]>{
 
 insertVehiculo(vehiculo:Vehiculo){
   
-  
   return this.http.post<Respuesta>(this.baseUrl+"vehiculo/", vehiculo, this.httpOptions);
 }
 getVehiculo(codigo:string){
@@ -128,6 +127,8 @@ private listaAutos: Array<Vehiculo>=[
 ];
 
 }
+
+
 export interface Respuesta{
   codigo: string;
   mensaje: string;

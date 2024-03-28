@@ -3,3 +3,19 @@
     color: #060606; 
     width: fit-content; 
 }
+.custom-margin {
+    margin-right: 10px; 
+}
+.btn-delete{
+    background-color: #4c1f32;
+    color: #fffcfc; 
+    width: fit-content; 
+}
+.btn-edit{
+    background-color: #652edc;
+    color: #fffcfc; 
+    width: fit-content; 
+}
+th{
+    color: rgb(232, 165, 217);
+}

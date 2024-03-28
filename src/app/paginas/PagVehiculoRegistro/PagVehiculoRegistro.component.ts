@@ -18,11 +18,8 @@ export class PagVehiculoRegistroComponent implements OnInit {
 
   constructor(
     private vehiculoServicie: VehiculoService,
-    private formBuilder: FormBuilder,
-    private activedRoute: ActivatedRoute
+    private formBuilder: FormBuilder
   ) { 
-    
-    
     this.formulario= this.formBuilder.group({
       "codigo":['',[Validators.required, validadorCodigo()]],
       "marca":['',[Validators.required]],
@@ -31,15 +28,14 @@ export class PagVehiculoRegistroComponent implements OnInit {
       "kilometraje":['',[Validators.required]],
       "precio":[],
       "calificacion":['',[Validators.required]]
-      
     });
   }
 
   ngOnInit() {
-    this.activedRoute.params.subscribe(param =>{
+    /*this.activedRoute.params.subscribe(param =>{
       let codigo = param ['codigo'];
       this.vehiculoServicie.getVehiculo
-    });
+    });*/
   }
   
   guardar(){
@@ -65,9 +61,14 @@ export class PagVehiculoRegistroComponent implements OnInit {
             });
           }
         }
-      )
+      );
+    }else{
+      Swal.fire({
+        title:"Mensaje",
+        text: "Faltan llenar campos!",
+        icon: "error"
+      });
     }
-
   }
 
 }

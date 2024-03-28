@@ -16,12 +16,12 @@ const routes: Routes = [
     component: PagListaVehiculosComponent
   },
   {
-    path: "vehiculo",
-    component: PagVehiculoRegistroComponent
-  },
-  {
     path: "vehiculo/:codigo",
     component: PagVehiculoComponent
+  },
+  {
+    path: "vehiculo",
+    component: PagVehiculoRegistroComponent
   },
   {
     path: "",
