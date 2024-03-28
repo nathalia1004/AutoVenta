@@ -16,7 +16,7 @@ httpOptions ={
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-getVehiculos():Observable<Vehiculo[]>{
+getVehiculos(filtro?: string, rows?: number,page?:number):Observable<Respuesta>{
   /*const escucha: Observable<Array<Vehiculo>>= new Observable(
     escuchando=>{
       let lista= this.listaAutos.filter(elem => elem.marca.toLowerCase().includes(filtro.toLowerCase()));
@@ -24,9 +24,14 @@ getVehiculos():Observable<Vehiculo[]>{
     }
   );
   return escucha;*/
-  return this.http.get<Respuesta> (this.baseUrl+"vehiculos/").pipe(
+  let body = new HttpParams();
+  body =filtro ? body.set('filtro',filtro) : body;
+  body =rows ? body.set('rows',rows) : body;
+  body =page ? body.set('page',page) : body;
+  /*return this.http.get<Respuesta> (this.baseUrl+"vehiculos/", {params: body}).pipe(
     map(respuesta => respuesta.data)
-  );
+  );*/
+  return this.http.get<Respuesta> (this.baseUrl+"vehiculos/", {params: body});
 }
 
 insertVehiculo(vehiculo:Vehiculo){
@@ -133,4 +138,8 @@ export interface Respuesta{
   codigo: string;
   mensaje: string;
   data: Array<Vehiculo>|Vehiculo|any;
+  rows: number;
+  pages: number;
+  records: number;
+  page: number;
 }
