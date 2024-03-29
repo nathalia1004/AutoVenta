@@ -1,3 +1,45 @@
-<p>
-  ListaClientes works!
-</p>
+<div class="card border-light mb-3">
+  <div class="card-header" style="background-color: #926598;">
+    <h1>{{ tituloListaClientes }}✧</h1>
+  </div>
+  <div class="card-body" style="background-color: #ba9dbe;">
+    <div class="row">
+      <div class="col-3">
+          <a [routerLink]="['/clientes/registro']"  class="btn btn-custom"> Nuevo cliente 🔧</a>
+      </div>
+  </div>
+  <br>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover table-dark" >
+      <thead >
+        <tr class="text-primary">
+          <th class="text-center"><h6>Id</h6></th>
+          <th class="text-center"><h6>Nombre</h6></th>
+          <th class="text-center"><h6>Apellido</h6></th>
+          <th class="text-center"><h6>Password</h6></th>
+          <th class="text-center"><h6>Teléfono</h6></th>
+          <th class="text-center"><h6>Email</h6></th>
+          <th class="text-center"><h6>Opciones</h6></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaClientes">
+          <td>{{item.id}}</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.apellido}}</td>
+          <td>{{item.password}}</td>
+          <td>{{item.telefono}}</td>
+          <td>{{item.email}}</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-edit custom-margin" [routerLink]="['/clientes/'+item.id]" >Editar📝 </button>
+              <button type="button" class="btn btn-delete" >Eliminar❌</button>
+          </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

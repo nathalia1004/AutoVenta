@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from '../../utilitarios/modelos/Cliente';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-ClienteDetalle',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteDetalleComponent implements OnInit {
 
-  constructor() { }
+  quiereContacto: boolean = false;
+
+  cliente?: Cliente;
+
+  constructor( private location: Location) { }
 
   ngOnInit() {
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

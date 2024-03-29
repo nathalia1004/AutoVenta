@@ -1,3 +1,78 @@
-<p>
-  ClienteRegistro works!
-</p>
+
+  <div class="card">
+    <div class="card-header" style="background-color: #926598;">
+        <h3>🔧👤 Creación de nuevo cliente</h3> 
+    </div>
+    <div class="card-body" style="background-color: #ba9dbe;">
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-1"></div>
+        
+        <div class="col-6">
+          <div class="d-flex justify-content-between align-items-center" >
+            <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Id: </h4></label>
+            <div class="col-sm-8 text-start">
+              <input type="number" class="form-control" id="staticCodigo" name="id" formControlName="id">
+              <span class="text-danger" >Valor Requerido</span><br>
+              <span class="text-danger" >Solo Acepta digitos</span>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center" >
+            <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Nombre:</h4></label>
+            <div class="col-sm-8 text-start">
+              <input type="text" class="form-control" id="staticCodigo" name="nombre" formControlName="nombre" >
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center" >
+            <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Apellido:</h4></label>
+            <div class="col-sm-8 text-start">
+              <input type="text" class="form-control" id="staticCodigo" name="apellido" formControlName="apellido" >
+            </div>
+          </div>
+        
+          <div class="d-flex justify-content-between align-items-center" >
+            <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Password:</h4> </label>
+            <div class="col-sm-8 text-start">
+              <input type="password" class="form-control" id="staticCodigo" name="password" formControlName="password"  >
+            </div>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox"  class="form-check-input" [(ngModel)]="quiereContacto"  id="proporcionaDatos">
+            <label class="form-check-label" for="proporcionaDatos">¿Desea contacto?</label>
+          </div>
+            
+          <div class="d-flex justify-content-between align-items-center" *ngIf="quiereContacto" >
+            <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Teléfono:</h4> </label>
+            <div class="col-sm-8 text-start">
+              <input type="number" class="form-control" id="staticCodigo" name="telefono"  formControlName="telefono" >
+              <div id="telefonoHelp" class="form-text ">*Tu teléfono está seguro con nosotros</div>
+
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center" *ngIf="quiereContacto" >
+            <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Email:</h4> </label>
+            <div class="col-sm-8 text-start">
+              <input type="email" class="form-control" id="staticCodigo" name="email" formControlName="email" >
+              <div id="correoHelp" class="form-text">*Nunca compartiremos tu correo con nadie.</div>
+            </div>
+          </div>
+          
+        </div>
+      
+      </div>
+      <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+          <div class="mb-2">
+            <button class="btn btn-custom" > Guardar 💾</button>
+          </div>
+          <div>
+            <button  class="btn btn-volver"> ↩ Regresar </button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
