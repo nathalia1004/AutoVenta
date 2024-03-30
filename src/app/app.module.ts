@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaginaModule } from './paginas/PaginaModule';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { UserInterceptorService } from './interceptores/UserInterceptor.service';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { UserInterceptorService } from './interceptores/UserInterceptor.service'
     BrowserModule,
     AppRoutingModule,
     PaginaModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [

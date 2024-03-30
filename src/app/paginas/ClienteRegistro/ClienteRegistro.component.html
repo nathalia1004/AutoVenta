@@ -1,4 +1,4 @@
-
+<form [formGroup]="formulario">
   <div class="card">
     <div class="card-header" style="background-color: #926598;">
         <h3>🔧👤 Creación de nuevo cliente</h3> 
@@ -39,11 +39,11 @@
             </div>
           </div>
           <div class="mb-3 form-check">
-            <input type="checkbox"  class="form-check-input" [(ngModel)]="quiereContacto"  id="proporcionaDatos">
+            <input type="checkbox"  class="form-check-input" (change)="toggleCamposContacto($event)" id="proporcionaDatos" >
             <label class="form-check-label" for="proporcionaDatos">¿Desea contacto?</label>
           </div>
             
-          <div class="d-flex justify-content-between align-items-center" *ngIf="quiereContacto" >
+          <div class="d-flex justify-content-between align-items-center" *ngIf="mostrarCamposContacto" >
             <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Teléfono:</h4> </label>
             <div class="col-sm-8 text-start">
               <input type="number" class="form-control" id="staticCodigo" name="telefono"  formControlName="telefono" >
@@ -51,7 +51,7 @@
 
             </div>
           </div>
-          <div class="d-flex justify-content-between align-items-center" *ngIf="quiereContacto" >
+          <div class="d-flex justify-content-between align-items-center" *ngIf="mostrarCamposContacto" >
             <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Email:</h4> </label>
             <div class="col-sm-8 text-start">
               <input type="email" class="form-control" id="staticCodigo" name="email" formControlName="email" >
@@ -75,4 +75,4 @@
   
     </div>
   </div>
-
+</form>

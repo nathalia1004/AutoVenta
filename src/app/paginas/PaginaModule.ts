@@ -10,6 +10,7 @@ import { PagNotFoundComponent } from "./PagNotFound/PagNotFound.component";
 import { ListaClientesComponent } from "./ListaClientes/ListaClientes.component";
 import { ClienteDetalleComponent } from "./ClienteDetalle/ClienteDetalle.component";
 import { ClienteRegistroComponent } from "./ClienteRegistro/ClienteRegistro.component";
+import { AEspacioPipe } from "../utilitarios/pipes/AEspacio.pipe";
 
 @NgModule({
     imports:[
