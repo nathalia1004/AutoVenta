@@ -14,46 +14,48 @@
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Código: </h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="codigo" formControlName="codigo">
-            <span class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['required']">Valor Requerido</span><br>
-            <span class="text-danger" *ngIf="formulario.controls['codigo'].errors?.['codigoValidate']">Solo Acepta digitos</span>
+            <input type="text" class="form-control" id="codigo" name="codigo" formControlName="codigo">
+            <span class="small-text gray-text" *ngIf="formulario.controls['codigo'].errors?.['required']">*Campo Obligatorio</span><br>
+            <span class="small-text gray-text" *ngIf="formulario.controls['codigo'].errors?.['codigoValidate']">*El campo debe contener una mayúscula seguida de cuatro dígitos.</span>
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Marca:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="marca" formControlName="marca" >
+            <input type="text" class="form-control" id="marca" name="marca" formControlName="marca" >
+            <span class="small-text gray-text" *ngIf="formulario.controls['codigo'].errors?.['required']">*Campo Obligatorio</span><br>
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Modelo:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="modelo" formControlName="modelo" >
+            <input type="text" class="form-control" id="modelo" name="modelo" formControlName="modelo" >
+            <span class="small-text gray-text" *ngIf="formulario.controls['codigo'].errors?.['required']">*Campo Obligatorio</span><br>
           </div>
         </div>
       
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Año:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="anio" formControlName="anio"  >
+            <input type="number" class="form-control" id="anio" name="anio" formControlName="anio"  >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Kilometraje:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="kilometraje"  formControlName="kilometraje" >
+            <input type="number" class="form-control" id="kilometraje" name="kilometraje"  formControlName="kilometraje" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Precio:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="precio" formControlName="precio" >
+            <input type="number" class="form-control" id="precio" name="precio" formControlName="precio" >
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Calificación:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="number" class="form-control" id="staticCodigo" name="calificacion" formControlName="calificacion" >
+            <input type="number" class="form-control" id="calificacion" name="calificacion" formControlName="calificacion" >
           </div>
         </div>
       </div>

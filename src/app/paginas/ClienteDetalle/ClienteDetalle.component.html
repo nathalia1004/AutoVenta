@@ -1,8 +1,7 @@
-
+<form [formGroup]="formulario">
 <div class="card">
   <div class="card-header" style="background-color: #926598;">
-    <h3 *ngIf="cliente">🖊️👤 Editar: </h3>
-    <h1>aalal</h1>
+    <h3 *ngIf="cliente">🖊️👤 Editar: {{cliente.nombre|uppercase}} {{cliente.apellido|uppercase}}  </h3>
   </div>
   <div class="card-body" style="background-color: #ba9dbe;">
     <div class="row">
@@ -15,27 +14,32 @@
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Id: </h4></label>
           <div class="col-sm-8 text-start">
-            <input type="number" class="form-control" id="staticCodigo" name="id" formControlName="id">
+            <input type="number" class="form-control" id="codigo" name="id" formControlName="id">
             
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Nombre:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="nombre" formControlName="nombre" >
+            <input type="text" class="form-control" id="nombre" name="nombre" formControlName="nombre" >
+            <span class="small-text gray-text" *ngIf="formulario.controls['nombre'].errors?.['required']">*Campo Obligatorio</span><br>
+            <span class="small-text gray-text" *ngIf="formulario.controls['nombre'].errors?.['nombreApValidate']">*El nombre debe contener solo letras y espacios.</span>
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Apellido:</h4></label>
           <div class="col-sm-8 text-start">
-            <input type="text" class="form-control" id="staticCodigo" name="apellido" formControlName="apellido" >
+            <input type="text" class="form-control" id="apellido" name="apellido" formControlName="apellido" >
+            <span class="small-text gray-text" *ngIf="formulario.controls['id'].errors?.['required']">*Campo Obligatorio</span><br>
+              <span class="small-text gray-text" *ngIf="formulario.controls['apellido'].errors?.['nombreApValidate']">*El apellido debe contener solo letras y espacios.</span>
           </div>
         </div>
       
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Password:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="password" class="form-control" id="staticCodigo" name="password" formControlName="password"  >
+            <input type="password" class="form-control" id="password" name="password" formControlName="password"  >
+            <span class="small-text gray-text" *ngIf="formulario.controls['id'].errors?.['required']">*Campo Obligatorio</span><br>
           </div>
         </div>
         
@@ -43,7 +47,7 @@
         <div class="d-flex justify-content-between align-items-center" >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Teléfono:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="number" class="form-control" id="staticCodigo" name="telefono"  formControlName="telefono" >
+            <input type="number" class="form-control" id="telefono" name="telefono"  formControlName="telefono" >
             
 
           </div>
@@ -51,7 +55,7 @@
         <div class="d-flex justify-content-between align-items-center"  >
           <label for="staticCodigo" class="col-sm-3 col-form-label text-start"><h4>Email:</h4> </label>
           <div class="col-sm-8 text-start">
-            <input type="email" class="form-control" id="staticCodigo" name="email" formControlName="email" >
+            <input type="email" class="form-control" id="email" name="email" formControlName="email" >
             
           </div>
         </div>
@@ -62,7 +66,7 @@
     <div class="row">
       <div class="col-md-6 offset-md-3 text-center">
         <div class="mb-2">
-          <button class="btn btn-custom" > Guardar 💾</button>
+          <button class="btn btn-custom" (click)="guardar()"> Guardar 💾</button>
         </div>
         <div>
           <button (click)="goBack()" class="btn btn-volver"> ↩ Regresar </button>
@@ -72,4 +76,5 @@
 
   </div>
 </div>
+</form>
 

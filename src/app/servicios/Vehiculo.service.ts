@@ -17,20 +17,12 @@ httpOptions ={
 };
 
 getVehiculos(filtro?: string, rows?: number,page?:number):Observable<Respuesta>{
-  /*const escucha: Observable<Array<Vehiculo>>= new Observable(
-    escuchando=>{
-      let lista= this.listaAutos.filter(elem => elem.marca.toLowerCase().includes(filtro.toLowerCase()));
-      escuchando.next(lista);
-    }
-  );
-  return escucha;*/
+  
   let body = new HttpParams();
   body =filtro ? body.set('filtro',filtro) : body;
   body =rows ? body.set('rows',rows) : body;
   body =page ? body.set('page',page) : body;
-  /*return this.http.get<Respuesta> (this.baseUrl+"vehiculos/", {params: body}).pipe(
-    map(respuesta => respuesta.data)
-  );*/
+
   return this.http.get<Respuesta> (this.baseUrl+"vehiculos/", {params: body});
 }
 
@@ -49,15 +41,6 @@ eliminarVehiculo(codigo:string){
   return this.http.delete<Respuesta>(this.baseUrl+"vehiculo/"+codigo);
 }
 
-/*getVehiculo(codigo:string):Observable<Vehiculo|undefined>{
-  const escucha: Observable<Vehiculo|undefined>= new Observable(
-    escuchando=>{
-      let vehiculo= this.listaAutos.find(element => element.codigo === codigo);
-      escuchando.next(vehiculo);
-    }
-  );
-  return escucha;
-}*/
 addVehiculo(vehiculo:Vehiculo){
   this.listaAutos.push(vehiculo);
 }

@@ -26,15 +26,15 @@
       <tbody>
         <tr *ngFor="let item of listaClientes">
           <td>{{item.id}}</td>
-          <td>{{item.nombre}}</td>
-          <td>{{item.apellido}}</td>
+          <td>{{item.nombre|uppercase}}</td>
+          <td>{{item.apellido|uppercase}}</td>
           <td>{{item.password}}</td>
           <td>{{item.telefono}}</td>
           <td>{{item.email}}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-edit custom-margin" [routerLink]="['/clientes/'+item.id]" >Editar📝 </button>
-              <button type="button" class="btn btn-delete" >Eliminar❌</button>
+              <button type="button" class="btn btn-delete" (click)="eliminar(item.id)" >Eliminar❌</button>
           </div>
           </td>
         </tr>

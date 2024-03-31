@@ -110,12 +110,6 @@ export class PagListaVehiculosComponent implements OnInit {
     });
   }
 
-  //consultaVehiculos(){
-    //this.vehiculoService.getVehiculos(this.filtro).subscribe(data=>{
-      //this.listaAutos= data;
-    //});
-    
-  //}
   
   recepcion(dato:number){
     console.log('Dato: ',dato);
