@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ClienteService } from '../../servicios/Cliente.service';
 import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,6 +12,12 @@ import Swal from 'sweetalert2';
 export class ListaClientesComponent implements OnInit {
 
   tituloListaClientes: string = "Lista de Clientes";
+  public rows:number =15;
+  public page: number =1;
+  public pages: number= 0;
+  public filtro: string ="";
+
+  @Input()valor:string='';
   listaClientes:Array<any> =[];
   
 
@@ -20,11 +27,39 @@ export class ListaClientesComponent implements OnInit {
     this.consultarClientes();
   }
   consultarClientes(){
-    this.clienteService.getClientes().subscribe(respuesta =>{
-      this.listaClientes=respuesta;
-    }
-    );
+    this.clienteService.getClientes(this.filtro, this.rows, this.page).subscribe( respuesta =>{
+      if(respuesta.codigo=='1'){
+        this.listaClientes = respuesta.data;
+        this.pages= respuesta.pages;
+        this.paginar(respuesta.pages);
+      }
+  });
+}
+
+cambiarPagina(pagina:number){
+  this.page = pagina;
+  this.consultarClientes();
+}
+listaPaginas: Array<number>=[];
+paginar(pages: number){
+  this.listaPaginas= [];
+  for(let i=1; i<=pages; i++){
+    this.listaPaginas.push(i);
   }
+}
+siguiente(){
+  if(this.page< this.pages){
+    this.page++;
+    this.consultarClientes();
+  }
+}
+
+atras(){
+  if(this.page> 1){
+    this.page--;
+    this.consultarClientes();
+  }
+}
 
 
   eliminar(id:string){

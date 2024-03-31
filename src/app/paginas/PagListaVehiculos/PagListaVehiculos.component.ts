@@ -15,17 +15,11 @@ export class PagListaVehiculosComponent implements OnInit {
     muestraImagen: boolean = false;
     //filtro: string ="";
     //private _filtro:string="";
-    public rows:number =10;
+    public rows:number =15;
     public page: number =1;
     public pages: number= 0;
     public filtro: string ="";
-    /*get filtro(){
-      return this._filtro;
-    }
-    set filtro(filtro:string){
-      this._filtro=filtro;
-      //this.consultaVehiculos();
-    }*/
+ 
     anchoImagen=120;
     margenImagen=10;
 

@@ -66,6 +66,12 @@ export class ClienteDetalleComponent implements OnInit {
             text: "Cliente actualizado con éxito!",
             icon: "info"
           });
+        }else{
+          Swal.fire({
+            title: "Mensaje",
+            text: "No se pudo actulizar"+ data.mensaje,
+            icon: "info"
+          });
         }
       });
     }else{
