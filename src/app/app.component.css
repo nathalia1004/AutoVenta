@@ -1,0 +1,15 @@
+.bg-custom {
+    background-color: #926598;
+}
+.nav-link-custom:hover {
+    color: #72064c; 
+    padding: 3px 20px;
+    font-size: 22px; 
+    
+}
+
+.nav-link-custom {
+    font-size: 20px; 
+    padding: 1px 20px;
+  }
+  

@@ -9,6 +9,7 @@ import { ListaClientesComponent } from './paginas/ListaClientes/ListaClientes.co
 import { ClienteDetalleComponent } from './paginas/ClienteDetalle/ClienteDetalle.component';
 import { ClienteRegistroComponent } from './paginas/ClienteRegistro/ClienteRegistro.component';
 
+
 const routes: Routes = [
   {
     path: "home",

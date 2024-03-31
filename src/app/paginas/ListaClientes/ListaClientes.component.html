@@ -1,6 +1,6 @@
 <div class="card border-light mb-3">
   <div class="card-header" style="background-color: #926598;">
-    <h1>{{ tituloListaClientes }}✧</h1>
+    <h2>{{ tituloListaClientes }}</h2>
   </div>
   <div class="card-body" style="background-color: #ba9dbe;">
     <div class="row mb-3">
@@ -13,7 +13,7 @@
   </div>
   <div class="row mb-3">
       <div class="col-md-12">
-          <h3>Filtrar por: {{ filtro }}</h3>
+          <h5>Filtrar por: {{ filtro }}</h5>
       </div>
   </div>
     <div class="row">
@@ -45,13 +45,13 @@
           </td>
       </tr>
         <tr class="text-primary">
-          <th class="text-center"><h6>Id</h6></th>
-          <th class="text-center"><h6>Nombre</h6></th>
-          <th class="text-center"><h6>Apellido</h6></th>
-          <th class="text-center"><h6>Password</h6></th>
-          <th class="text-center"><h6>Teléfono</h6></th>
-          <th class="text-center"><h6>Email</h6></th>
-          <th class="text-center"><h6>Opciones</h6></th>
+          <th class="text-center"><h5>Id</h5></th>
+          <th class="text-center"><h5>Nombre</h5></th>
+          <th class="text-center"><h5>Apellido</h5></th>
+          <th class="text-center"><h5>Password</h5></th>
+          <th class="text-center"><h5>Teléfono</h5></th>
+          <th class="text-center"><h5>Email</h5></th>
+          <th class="text-center"><h5>Opciones</h5></th>
         </tr>
       </thead>
       <tbody>
@@ -62,33 +62,31 @@
           <td>{{item.password}}</td>
           <td>{{item.telefono}}</td>
           <td>{{item.email}}</td>
-          <td>
-            <div class="btn-group" role="group" aria-label="Basic example">
+          <td class="text-center">
+            <div class="btn-group text-center" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-edit custom-margin" [routerLink]="['/clientes/'+item.id]" >Editar📝 </button>
               <button type="button" class="btn btn-delete" (click)="eliminar(item.id)" >Eliminar❌</button>
           </div>
           </td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr>
-            <td colspan="9">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" (click)="atras()">Anterior</a>
-                        </li>
-                        <li class="page-item" *ngFor="let pagina of listaPaginas" [ngClass]="{'active': pagina==page}">
-                            <a class="page-link" (click)="cambiarPagina(pagina)">{{ pagina }} </a></li>
-                        <li class="page-item">
-                            <a class="page-link" (click)="siguiente()">Siguiente</a>
-                        </li>
-                    </ul>
-                </nav>
-            </td>
-        </tr>
-    </tfoot>
+      
     </table>
+
+  </div>
+  <div class="card-footer text-center" style="background-color: #926598;">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+              <a class="page-link" (click)="atras()">Anterior</a>
+          </li>
+          <li class="page-item" *ngFor="let pagina of listaPaginas" [ngClass]="{'active': pagina==page}">
+              <a class="page-link" (click)="cambiarPagina(pagina)">{{ pagina }} </a></li>
+          <li class="page-item">
+              <a class="page-link" (click)="siguiente()">Siguiente</a>
+          </li>
+      </ul>
+  </nav>
 
   </div>
 </div>

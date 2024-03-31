@@ -1,5 +1,5 @@
 .btn-custom {
-    background-color: #d958d0;
+    background-color: #a849a2;
     color: #060606; 
     width: fit-content; 
 }
@@ -7,12 +7,13 @@
     margin-right: 10px; 
 }
 .btn-delete{
-    background-color: #4c1f32;
+    background-color: #4c1f32;;
     color: #fffcfc; 
     width: fit-content; 
 }
 .btn-edit{
     background-color: #652edc;
+   
     color: #fffcfc; 
     width: fit-content; 
 }
